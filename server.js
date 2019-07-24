@@ -42,7 +42,7 @@ server.post('/api/login', (req, res) => {
     Users.getUserBy({ username })
         .first()
         .then(user => {
-            if (user && bcrypt.compare(password, user.password)) {
+            if (user && bcrypt.compareSync(password, user.password)) {
                 res.status(200).json({ message: `Hello ${username}!` });
             } else {
                 res.status(401).json({ message: 'Invalid username or password' });
