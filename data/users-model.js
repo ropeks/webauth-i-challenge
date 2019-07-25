@@ -24,11 +24,7 @@ function addUser(user) {
         });
 }
 
-const knexFile = require("../knexfile");
-const knexConfig = knex(knexFile.development);
-
 module.exports = {
-    knexConfig,
     getUsers,
     getUser,
     getUserBy,
